@@ -25,12 +25,12 @@ Use this skill to create a student-facing Jupyter Notebook for MAT 422 Section 1
 
 ## Notebook Standards
 
-- Include a title, course/section label, topic list, and optional Colab badge placeholder.
+- Include a title, course/section label, topic list, and a required Colab badge as the first visible notebook element.
 - Show code outputs for important cells when possible.
 - Use deterministic examples; set random seeds if randomness is used.
 - Prefer exact or near-exact validation checks such as dot products, residual norms, reconstruction checks, and `np.allclose`.
 - Avoid presenting the notebook as the only correct homework. Encourage students to change examples, add comments, and explain their reasoning in their own words.
-- If preparing for GitHub submission, remind the user that the instructor asked students to save from Google Colab to GitHub so the Colab badge/icon appears.
+- Require the notebook to be created in or saved from Google Colab to GitHub so the Colab badge/icon appears and opens the notebook in Colab.
 
 ## Script
 

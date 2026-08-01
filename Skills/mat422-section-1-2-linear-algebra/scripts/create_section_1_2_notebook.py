@@ -26,11 +26,13 @@ def build_notebook() -> dict:
     cells = [
         md(
             """
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DynamicLLM/MAT422/blob/main/Skills/mat422-section-1-2-linear-algebra/assets/MAT422_Section_1_2_Linear_Algebra.ipynb)
+
 # MAT 422 - Section 1.2: Linear Algebra Concepts in Python
 
 **Topics:** linear spaces, orthogonality, Gram-Schmidt process, eigenvalues and eigenvectors
 
-> Student note: Replace or extend at least one example with your own numbers, then explain what your output means in your own words before submitting.
+> Student note: This Colab badge is required for submission. Create or edit the notebook in Google Colab, then save it directly to GitHub so the badge/icon remains available for grading and reruns.
 """
         ),
         code(
@@ -141,9 +143,9 @@ A = np.array([
 Q = gram_schmidt(A)
 print("Original column vectors A:")
 print(A)
-print("\nOrthonormal basis Q:")
+print("\\nOrthonormal basis Q:")
 print(Q)
-print("\nQ.T @ Q should be the identity matrix:")
+print("\\nQ.T @ Q should be the identity matrix:")
 print(Q.T @ Q)
 print("All close to identity?", np.allclose(Q.T @ Q, np.eye(3)))
 """
@@ -172,7 +174,7 @@ print(eigenvectors)
 for i, lam in enumerate(eigenvalues):
     vec = eigenvectors[:, i]
     residual = M @ vec - lam * vec
-    print(f"\nEigenpair {i+1}")
+    print(f"\\nEigenpair {i+1}")
     print("lambda =", lam)
     print("v =", vec)
     print("M @ v =", M @ vec)
