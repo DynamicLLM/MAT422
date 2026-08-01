@@ -3,7 +3,7 @@
 This repository supports MAT 422 coursework with two kinds of materials:
 
 - Course topic materials, organized by subject area.
-- Reusable homework skills in `Skills/`, which help students and AI agents create section-specific Jupyter Notebook assignments.
+- Reusable homework and research-paper skills in `Skills/`, which help students and AI agents create section-specific Jupyter Notebook assignments or paper-based study materials.
 
 ## Repository Structure
 
@@ -13,7 +13,17 @@ This repository supports MAT 422 coursework with two kinds of materials:
 - `Probability/`: Probability and statistics readings, including expected value, variance, binomial distributions, Pearson correlation, and the central limit theorem.
 - `LLM Fine-Tuning/`: Materials related to fine-tuning and large language models.
 - `tools/`: Utility notes and supporting course tools.
-- `Skills/`: Reusable Codex skills for creating MAT 422 homework notebooks by section.
+- `Skills/`: Reusable Codex skills for creating MAT 422 homework notebooks and research-paper references.
+
+## Using AI Responsibly
+
+AI tools are permitted for MAT 422 assignments. You may use AI systems, including Codex through ChatGPT/ASU, as a reference, coding assistant, debugging partner, and study aid. AI can help you understand concepts, generate starter examples, explain Python code, and organize your notebook.
+
+However, you are still responsible for doing the homework independently. Do not submit AI output without reading, running, checking, and personalizing it. Your notebook should show your own understanding through your explanations, examples, comments, and interpretation of results.
+
+For each homework assignment or research paper, section-specific skills may be provided in `Skills/` as examples and references. You can ask Codex to use the relevant skill while working on an assignment, but you should still verify the math, run the notebook yourself, and make the final submission your own work.
+
+Codex tutorial: https://www.youtube.com/watch?v=0TitiOk7hbI
 
 ## Homework Skills
 

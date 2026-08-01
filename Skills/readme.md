@@ -1,6 +1,16 @@
 # MAT 422 Skills
 
-This folder contains reusable Codex skills for MAT 422 homework sections. Each section has its own subfolder with instructions, references, a notebook generator script, and a starter Jupyter Notebook asset.
+This folder contains reusable Codex skills for MAT 422 homework sections and research-paper references. Each section skill has its own subfolder with instructions, references, a notebook generator script, and a starter Jupyter Notebook asset.
+
+## AI Use Guidance
+
+AI tools are permitted for MAT 422 assignments. Students may use AI systems, including Codex through ChatGPT/ASU, as a reference, coding assistant, debugging partner, and study aid.
+
+Use AI to help understand math concepts, generate starter examples, explain Python code, organize notebooks, and check errors. Do not submit AI output without reviewing it carefully. Students are responsible for running the code, verifying the math, personalizing examples, and writing explanations in their own words.
+
+For each homework assignment or research paper, a skill may be provided as an example/reference. Ask Codex to use the relevant skill when helpful, but treat it as support for your own independent work.
+
+Codex tutorial: https://www.youtube.com/watch?v=0TitiOk7hbI
 
 ## Current section skills
 
