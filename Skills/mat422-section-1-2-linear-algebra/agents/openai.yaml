@@ -1,0 +1,4 @@
+interface:
+  display_name: "MAT422 Section 1.2"
+  short_description: "Build Section 1.2 linear algebra notebooks"
+  default_prompt: "Use $mat422-section-1-2-linear-algebra to create a MAT 422 Section 1.2 Python notebook homework."
