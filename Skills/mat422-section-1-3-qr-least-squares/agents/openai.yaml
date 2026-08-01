@@ -1,0 +1,4 @@
+interface:
+  display_name: "MAT422 Section 1.3"
+  short_description: "Build Section 1.3 QR and regression notebooks"
+  default_prompt: "Use $mat422-section-1-3-qr-least-squares to create a MAT 422 Section 1.3 Python notebook homework."
