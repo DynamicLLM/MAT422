@@ -6,7 +6,7 @@ This repository supports MAT 422 coursework with three kinds of materials:
 - Student homework skills in `Skills/Student Home Work Skills Pack/`, which help students and AI agents create section-specific Jupyter Notebook assignments.
 - Student project materials in `Projects/` and project workflow skills in `Skills/Student Project Skill Pack/`, which support AI-assisted modeling projects that may use notebooks, scripts, reports, or discipline-specific software.
 
-## Repository Supplementary materials (see Canvas for lecture materials): 
+## Course Supplementary materials Structure: 
 
 - `Introduction/`: Introductory course resources, including additional readings and Colab upload guidance.
 - `LinearAlgebra/`: Linear algebra readings and examples, including least squares, SVD, PCA, covariance, and Python-based linear algebra materials.
