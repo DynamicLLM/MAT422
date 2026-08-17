@@ -1,6 +1,6 @@
 # MAT 422
 
-This repository supports MAT 422 coursework with three kinds of materials:
+This repository supports MAT 422 coursework with course materials, homework skills, and project skills:
 
 - Course topic materials (Supplementary, see Canvas for lecture materials), organized by subject area.
 - Student homework skills in `Skills/Student-Home-Work-Skills-Pack/`, which help students and AI agents create section-specific Jupyter Notebook assignments.
