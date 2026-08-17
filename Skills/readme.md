@@ -1,6 +1,6 @@
 # MAT 422 Skills
 
-This folder contains reusable Codex skills for MAT 422 homework sections and research-paper references. Homework section skills are organized under `Student Home Work Skills Pack/`, while interdisciplinary modeling skills are organized under `Student Project Skill Pack/`.
+This folder contains reusable Codex skills for MAT 422 homework sections and research-paper references. Homework section skills are organized under `Student-Home-Work-Skills-Pack/`, while interdisciplinary modeling skills are organized under `Student-Project-Skill-Pack/`.
 
 ## AI Use Guidance
 
@@ -14,13 +14,13 @@ Codex tutorial: https://www.youtube.com/watch?v=0TitiOk7hbI
 
 ## Student Home Work Skills
 
-- `Student Home Work Skills Pack/mat422-section-1-2-linear-algebra`: Linear spaces, orthogonality, Gram-Schmidt process, eigenvalues and eigenvectors.
-- `Student Home Work Skills Pack/mat422-section-1-3-qr-least-squares`: QR decomposition, least-squares problems, and linear regression.
-- `Student Home Work Skills Pack/mat422-section-1-4-svd-pca`: Singular value decomposition, low-rank matrix approximations, and principal component analysis.
+- `Student-Home-Work-Skills-Pack/mat422-section-1-2-linear-algebra`: Linear spaces, orthogonality, Gram-Schmidt process, eigenvalues and eigenvectors.
+- `Student-Home-Work-Skills-Pack/mat422-section-1-3-qr-least-squares`: QR decomposition, least-squares problems, and linear regression.
+- `Student-Home-Work-Skills-Pack/mat422-section-1-4-svd-pca`: Singular value decomposition, low-rank matrix approximations, and principal component analysis.
 
 ## Student Project Skills
 
-The `Student Project Skill Pack/` contains the common Codex workflow and discipline-specific modeling skills for projects using professional or computational software.
+The `Student-Project-Skill-Pack/` contains the common Codex workflow and discipline-specific modeling skills for projects using professional or computational software.
 
 ## How students should use the homework skills
 

@@ -3,8 +3,8 @@
 This repository supports MAT 422 coursework with three kinds of materials:
 
 - Course topic materials (Supplementary, see Canvas for lecture materials), organized by subject area.
-- Student homework skills in `Skills/Student Home Work Skills Pack/`, which help students and AI agents create section-specific Jupyter Notebook assignments.
-- Student project materials in `Projects/` and project workflow skills in `Skills/Student Project Skill Pack/`, which support AI-assisted modeling projects that may use notebooks, scripts, reports, or discipline-specific software.
+- Student homework skills in `Skills/Student-Home-Work-Skills-Pack/`, which help students and AI agents create section-specific Jupyter Notebook assignments.
+- Student project materials in `Projects/` and project workflow skills in `Skills/Student-Project-Skill-Pack/`, which support AI-assisted modeling projects that may use notebooks, scripts, reports, or discipline-specific software.
 
 ## Repository Structure: 
 
@@ -29,13 +29,13 @@ Codex tutorial: https://www.youtube.com/watch?v=0TitiOk7hbI
 
 ## Homework Skills
 
-The homework skills are located under `Skills/Student Home Work Skills Pack/`. Each section skill is designed to guide an AI agent or student through creating a complete, rubric-aligned Jupyter Notebook homework submission.
+The homework skills are located under `Skills/Student-Home-Work-Skills-Pack/`. Each section skill is designed to guide an AI agent or student through creating a complete, rubric-aligned Jupyter Notebook homework submission.
 
 Current homework skills include:
 
-- `Skills/Student Home Work Skills Pack/mat422-section-1-2-linear-algebra`: Linear spaces, orthogonality, Gram-Schmidt process, eigenvalues and eigenvectors.
-- `Skills/Student Home Work Skills Pack/mat422-section-1-3-qr-least-squares`: QR decomposition, least-squares problems, and linear regression.
-- `Skills/Student Home Work Skills Pack/mat422-section-1-4-svd-pca`: Singular value decomposition, low-rank matrix approximations, and principal component analysis.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-1-2-linear-algebra`: Linear spaces, orthogonality, Gram-Schmidt process, eigenvalues and eigenvectors.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-1-3-qr-least-squares`: QR decomposition, least-squares problems, and linear regression.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-1-4-svd-pca`: Singular value decomposition, low-rank matrix approximations, and principal component analysis.
 
 Each homework skill folder may include:
 
@@ -50,7 +50,7 @@ The generator scripts are helper tools only. The homework submission should be t
 
 The project materials are located in `Projects/`. Students should start with `Projects/student-project-requirements.md`, review `Projects/README_student_guide.md`, and use `Projects/example-project/` as a reference for organizing a reproducible project repository.
 
-The project skills are located under `Skills/Student Project Skill Pack/`. They support a richer workflow than a single prompt by breaking the project into repeatable phases:
+The project skills are located under `Skills/Student-Project-Skill-Pack/`. They support a richer workflow than a single prompt by breaking the project into repeatable phases:
 
 1. Problem formulation: define the domain problem, objectives, inputs, assumptions, constraints, and success criteria.
 2. Model or method selection: compare candidate approaches and justify the final choice.
@@ -98,7 +98,7 @@ A strong MAT 422 project repository should include:
 ## Suggested Homework Workflow
 
 1. Review the relevant course topic materials.
-2. Use the matching skill under `Skills/Student Home Work Skills Pack/` as homework guidance.
+2. Use the matching skill under `Skills/Student-Home-Work-Skills-Pack/` as homework guidance.
 3. Open or create the notebook in Google Colab.
 4. Run all code cells and verify the outputs.
 5. Add your own explanations and personalize at least one example.
@@ -109,7 +109,7 @@ A strong MAT 422 project repository should include:
 
 1. Read `Projects/student-project-requirements.md` and `Projects/README_student_guide.md`.
 2. Review `Projects/example-project/` for the recommended repository structure.
-3. Use the relevant workflow and discipline skills under `Skills/Student Project Skill Pack/`.
+3. Use the relevant workflow and discipline skills under `Skills/Student-Project-Skill-Pack/`.
 4. Define your project problem, data or inputs, assumptions, constraints, and success criteria.
 5. Use Codex to compare methods, implement the workflow, debug, validate, and iterate.
 6. Document important prompts, AI contributions, corrections, and human decisions.
