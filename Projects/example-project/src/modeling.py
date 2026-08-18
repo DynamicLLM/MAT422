@@ -36,7 +36,7 @@ def main() -> None:
         ]),
     }
 
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    cv = StratifiedKFold(n_splits=2, shuffle=True, random_state=42)
     for name, model in models.items():
         scores = cross_validate(
             model,

@@ -1,0 +1,33 @@
+name: Example Project Python Check
+
+on:
+  push:
+    paths:
+      - "Projects/example-project/**"
+      - ".github/workflows/example-project-python.yml"
+  pull_request:
+    paths:
+      - "Projects/example-project/**"
+      - ".github/workflows/example-project-python.yml"
+  workflow_dispatch:
+
+jobs:
+  run-example-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r Projects/example-project/requirements.txt
+
+      - name: Run example project script
+        run: python Projects/example-project/src/modeling.py
