@@ -1,0 +1,42 @@
+name: Section 1.2 Notebook Generator Check
+
+on:
+  push:
+    paths:
+      - "Skills/Student-Home-Work-Skills-Pack/mat422-section-1-2-linear-algebra/**"
+      - ".github/workflows/section-1-2-notebook-generator.yml"
+  pull_request:
+    paths:
+      - "Skills/Student-Home-Work-Skills-Pack/mat422-section-1-2-linear-algebra/**"
+      - ".github/workflows/section-1-2-notebook-generator.yml"
+  workflow_dispatch:
+
+jobs:
+  generate-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate Section 1.2 notebook
+        run: |
+          python Skills/Student-Home-Work-Skills-Pack/mat422-section-1-2-linear-algebra/scripts/create_section_1_2_notebook.py \
+            --output MAT422_Section_1_2_Linear_Algebra.ipynb
+
+      - name: Check notebook file exists
+        run: test -f MAT422_Section_1_2_Linear_Algebra.ipynb
+
+      - name: Validate notebook JSON
+        run: python -m json.tool MAT422_Section_1_2_Linear_Algebra.ipynb > /tmp/validated-notebook.json
+
+      - name: Upload generated notebook
+        uses: actions/upload-artifact@v4
+        with:
+          name: MAT422_Section_1_2_Linear_Algebra
+          path: MAT422_Section_1_2_Linear_Algebra.ipynb
