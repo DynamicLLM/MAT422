@@ -84,17 +84,6 @@ The project should demonstrate understanding of at least one substantive quantit
 - GitHub repository URL with required README, code/scripts, inputs or data-access instructions, prompts/iteration log, results, and final report.
 - Final model/solution, interpretation, limitations, and discussion of AI errors or human corrections.
 
-## Evaluation criteria
-
-| Criterion | Weight | Expectation |
-| --- | ---: | --- |
-| Problem formulation and constraints | 20% | Problem is meaningful, measurable, and sufficiently specified; data/inputs and success criteria are clear. |
-| Codex/AI modeling-agent use | 20% | Codex contributes to model/method selection, implementation, diagnosis, comparison, and revision; important prompts/decisions are documented. |
-| Computational implementation | 15% | Chosen software is used reproducibly through code, scripts, notebooks, and structured data/results. |
-| Mathematical/data-science methodology | 20% | Appropriate quantitative methods are correctly applied and explained. |
-| Validation, comparison, and iteration | 15% | Results are quantitatively validated; alternatives/baselines are compared; errors and limitations are addressed. |
-| Communication and reproducibility | 10% | Report/presentation is clear and includes sufficient code, files, figures/tables, and execution detail to reproduce the work. |
-
 ## Required final report structure
 
 1. Problem and context
