@@ -19,7 +19,7 @@ def code(source: str) -> dict:
 def build_notebook() -> dict:
     cells = [
         md("""
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DynamicLLM/MAT422/blob/main/Skills/mat422-section-1-4-svd-pca/assets/MAT422_Section_1_4_SVD_Low_Rank_PCA.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DynamicLLM/MAT422/blob/main/Skills/Student-Home-Work-Skills-Pack/mat422-section-1-4-svd-pca/assets/MAT422_Section_1_4_SVD_Low_Rank_PCA.ipynb)
 
 # MAT 422 - Section 1.4: SVD, Low-Rank Approximation, and PCA
 
