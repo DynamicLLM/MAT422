@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+"""Generate a MAT 422 - Section 3.2: Limits, Derivatives, and Taylor's Theorem starter Jupyter Notebook."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+
+CELLS_JSON = r'''[
+    {
+        "source":  [
+                       "[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DynamicLLM/MAT422/blob/main/Skills/Student-Home-Work-Skills-Pack/mat422-section-3-2-limits-derivatives-taylor/assets/MAT422_Section_3_2_Limits_Derivatives_Taylor.ipynb)\\\\n",
+                       "\\\\n",
+                       "# MAT 422 - Section 3.2: Limits, Derivatives, and Taylor\\\\u0027s Theorem\\\\n",
+                       "\\\\n",
+                       "**Topics:** Limits and continuity, Derivatives, Taylor\\\\u0027s theorem\\\\n",
+                       "\\\\n",
+                       "\\\\u003e Student note: This Colab badge is required for submission. Create or edit the notebook in Google Colab, then save it directly to GitHub so the badge/icon remains available for grading and reruns.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "import numpy as np\\\\n",
+                       "import matplotlib.pyplot as plt\\\\n",
+                       "\\\\n",
+                       "np.set_printoptions(precision=6, suppress=True)\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Limits and continuity\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Limits and continuity**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "h = np.array([1, 0.5, 0.1, 0.01, 0.001])\\\\n",
+                       "values = np.sin(h) / h\\\\n",
+                       "print(\\\\"h values:\\\\", h)\\\\n",
+                       "print(\\\\"sin(h)/h:\\\\", values)\\\\n",
+                       "print(\\\\"These values approach 1 as h approaches 0.\\\\")\\\\n",
+                       "\\\\n",
+                       "x = np.linspace(-2, 2, 400)\\\\n",
+                       "y = np.where(x \\\\u003c 0, x**2, x + 1)\\\\n",
+                       "plt.plot(x, y)\\\\n",
+                       "plt.axvline(0, color=\\\\"black\\\\", linewidth=0.8)\\\\n",
+                       "plt.title(\\\\"Example of a jump discontinuity at x = 0\\\\")\\\\n",
+                       "plt.show()\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Derivatives\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Derivatives**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "def f(x):\\\\n",
+                       "    return x**3 - 2*x + 1\\\\n",
+                       "\\\\n",
+                       "point = 1.5\\\\n",
+                       "steps = np.array([1e-1, 1e-2, 1e-3, 1e-4])\\\\n",
+                       "numeric_derivatives = (f(point + steps) - f(point - steps)) / (2 * steps)\\\\n",
+                       "exact_derivative = 3 * point**2 - 2\\\\n",
+                       "\\\\n",
+                       "print(\\\\"numeric derivative estimates:\\\\", numeric_derivatives)\\\\n",
+                       "print(\\\\"exact derivative:\\\\", exact_derivative)\\\\n",
+                       "print(\\\\"errors:\\\\", np.abs(numeric_derivatives - exact_derivative))\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Taylor\\\\u0027s theorem\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Taylor\\\\u0027s theorem**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "x = np.linspace(-2, 2, 300)\\\\n",
+                       "taylor_exp = 1 + x + x**2 / 2 + x**3 / 6\\\\n",
+                       "\\\\n",
+                       "plt.plot(x, np.exp(x), label=\\\\"exp(x)\\\\")\\\\n",
+                       "plt.plot(x, taylor_exp, \\\\"--\\\\", label=\\\\"third-degree Taylor polynomial at 0\\\\")\\\\n",
+                       "plt.xlabel(\\\\"x\\\\")\\\\n",
+                       "plt.ylabel(\\\\"value\\\\")\\\\n",
+                       "plt.title(\\\\"Taylor approximation\\\\")\\\\n",
+                       "plt.legend()\\\\n",
+                       "plt.show()\\\\n",
+                       "\\\\n",
+                       "print(\\\\"Max error on [-1, 1] =\\\\", np.max(np.abs(np.exp(x[np.abs(x) \\\\u003c= 1]) - taylor_exp[np.abs(x) \\\\u003c= 1])))\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Reflection and Submission Checklist\\\\n",
+                       "\\\\n",
+                       "- I explained each concept in words before or after the code.\\\\n",
+                       "- I verified important claims numerically or visually.\\\\n",
+                       "- I changed or extended at least one example so the notebook reflects my own work.\\\\n",
+                       "- I ran the notebook from top to bottom without errors.\\\\n",
+                       "- I saved the notebook from Google Colab directly to GitHub, following the course instructions.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    }
+]'''
+
+
+def build_notebook() -> dict:
+    return {
+        "cells": json.loads(CELLS_JSON),
+        "metadata": {
+            "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
+            "language_info": {"name": "python", "pygments_lexer": "ipython3"},
+            "colab": {"name": "MAT422_Section_3_2_Limits_Derivatives_Taylor.ipynb"},
+        },
+        "nbformat": 4,
+        "nbformat_minor": 5,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", default="MAT422_Section_3_2_Limits_Derivatives_Taylor.ipynb", help="Output notebook path")
+    args = parser.parse_args()
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(build_notebook(), indent=2), encoding="utf-8")
+    print(f"Wrote {output}")
+
+
+if __name__ == "__main__":
+    main()

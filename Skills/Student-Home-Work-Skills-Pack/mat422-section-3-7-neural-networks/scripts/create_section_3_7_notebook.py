@@ -1,0 +1,289 @@
+#!/usr/bin/env python3
+"""Generate a MAT 422 - Section 3.7: Artificial Neural Networks starter Jupyter Notebook."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+
+CELLS_JSON = r'''[
+    {
+        "source":  [
+                       "[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DynamicLLM/MAT422/blob/main/Skills/Student-Home-Work-Skills-Pack/mat422-section-3-7-neural-networks/assets/MAT422_Section_3_7_Neural_Networks.ipynb)\\\\n",
+                       "\\\\n",
+                       "# MAT 422 - Section 3.7: Artificial Neural Networks\\\\n",
+                       "\\\\n",
+                       "**Topics:** Mathematical formulation, Activation functions, Cost function, Backpropagation, Backpropagation algorithm\\\\n",
+                       "\\\\n",
+                       "\\\\u003e Student note: This Colab badge is required for submission. Create or edit the notebook in Google Colab, then save it directly to GitHub so the badge/icon remains available for grading and reruns.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "import numpy as np\\\\n",
+                       "import matplotlib.pyplot as plt\\\\n",
+                       "\\\\n",
+                       "np.set_printoptions(precision=5, suppress=True)\\\\n",
+                       "rng = np.random.default_rng(422)\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Mathematical formulation\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Mathematical formulation**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "X = np.array([[0,0], [0,1], [1,0], [1,1]], dtype=float)\\\\n",
+                       "y = np.array([[0], [1], [1], [0]], dtype=float)\\\\n",
+                       "\\\\n",
+                       "def sigmoid(z):\\\\n",
+                       "    return 1 / (1 + np.exp(-z))\\\\n",
+                       "\\\\n",
+                       "W1 = rng.normal(scale=0.5, size=(2, 3))\\\\n",
+                       "b1 = np.zeros((1, 3))\\\\n",
+                       "W2 = rng.normal(scale=0.5, size=(3, 1))\\\\n",
+                       "b2 = np.zeros((1, 1))\\\\n",
+                       "\\\\n",
+                       "def forward(X):\\\\n",
+                       "    z1 = X @ W1 + b1\\\\n",
+                       "    a1 = np.tanh(z1)\\\\n",
+                       "    z2 = a1 @ W2 + b2\\\\n",
+                       "    a2 = sigmoid(z2)\\\\n",
+                       "    return z1, a1, z2, a2\\\\n",
+                       "\\\\n",
+                       "_, hidden, _, output = forward(X)\\\\n",
+                       "print(\\\\"Hidden layer values:\\\\")\\\\n",
+                       "print(hidden)\\\\n",
+                       "print(\\\\"Initial predicted probabilities:\\\\")\\\\n",
+                       "print(output)\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Activation functions\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Activation functions**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "def relu(z):\\\\n",
+                       "    return np.maximum(0, z)\\\\n",
+                       "\\\\n",
+                       "z = np.linspace(-5, 5, 300)\\\\n",
+                       "plt.plot(z, sigmoid(z), label=\\\\"sigmoid\\\\")\\\\n",
+                       "plt.plot(z, relu(z), label=\\\\"ReLU\\\\")\\\\n",
+                       "plt.xlabel(\\\\"z\\\\")\\\\n",
+                       "plt.ylabel(\\\\"activation\\\\")\\\\n",
+                       "plt.title(\\\\"Common activation functions\\\\")\\\\n",
+                       "plt.legend()\\\\n",
+                       "plt.show()\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Cost function\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Cost function**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "def binary_cross_entropy(y_true, y_prob):\\\\n",
+                       "    eps = 1e-9\\\\n",
+                       "    return -np.mean(y_true*np.log(y_prob + eps) + (1-y_true)*np.log(1-y_prob + eps))\\\\n",
+                       "\\\\n",
+                       "_, _, _, output = forward(X)\\\\n",
+                       "print(\\\\"Initial binary cross-entropy =\\\\", binary_cross_entropy(y, output))\\\\n",
+                       "print(\\\\"Target values:\\\\", y.ravel())\\\\n",
+                       "print(\\\\"Initial predicted probabilities:\\\\", output.ravel())\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Backpropagation\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Backpropagation**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "z1, a1, z2, a2 = forward(X)\\\\n",
+                       "dz2 = (a2 - y) / len(X)\\\\n",
+                       "dW2 = a1.T @ dz2\\\\n",
+                       "db2 = dz2.sum(axis=0, keepdims=True)\\\\n",
+                       "da1 = dz2 @ W2.T\\\\n",
+                       "dz1 = da1 * (1 - np.tanh(z1)**2)\\\\n",
+                       "dW1 = X.T @ dz1\\\\n",
+                       "db1 = dz1.sum(axis=0, keepdims=True)\\\\n",
+                       "\\\\n",
+                       "print(\\\\"dW2 shape:\\\\", dW2.shape)\\\\n",
+                       "print(\\\\"db2 shape:\\\\", db2.shape)\\\\n",
+                       "print(\\\\"dW1 shape:\\\\", dW1.shape)\\\\n",
+                       "print(\\\\"db1 shape:\\\\", db1.shape)\\\\n",
+                       "print(\\\\"Backpropagation sends the output error backward through W2 and the tanh derivative.\\\\")\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Backpropagation algorithm\\\\n",
+                       "\\\\n",
+                       "This section gives one compact Python demonstration of **Backpropagation algorithm**. After running the code, add your own interpretation and change at least one input, parameter, or example so the notebook reflects your own work.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    },
+    {
+        "outputs":  [
+
+                    ],
+        "source":  [
+                       "learning_rate = 0.5\\\\n",
+                       "losses = []\\\\n",
+                       "for step in range(2000):\\\\n",
+                       "    z1 = X @ W1 + b1\\\\n",
+                       "    a1 = np.tanh(z1)\\\\n",
+                       "    z2 = a1 @ W2 + b2\\\\n",
+                       "    a2 = sigmoid(z2)\\\\n",
+                       "    losses.append(binary_cross_entropy(y, a2))\\\\n",
+                       "\\\\n",
+                       "    dz2 = (a2 - y) / len(X)\\\\n",
+                       "    dW2 = a1.T @ dz2\\\\n",
+                       "    db2 = dz2.sum(axis=0, keepdims=True)\\\\n",
+                       "    da1 = dz2 @ W2.T\\\\n",
+                       "    dz1 = da1 * (1 - np.tanh(z1)**2)\\\\n",
+                       "    dW1 = X.T @ dz1\\\\n",
+                       "    db1 = dz1.sum(axis=0, keepdims=True)\\\\n",
+                       "\\\\n",
+                       "    W2 -= learning_rate * dW2\\\\n",
+                       "    b2 -= learning_rate * db2\\\\n",
+                       "    W1 -= learning_rate * dW1\\\\n",
+                       "    b1 -= learning_rate * db1\\\\n",
+                       "\\\\n",
+                       "_, _, _, final_output = forward(X)\\\\n",
+                       "print(\\\\"Final probabilities:\\\\")\\\\n",
+                       "print(final_output)\\\\n",
+                       "print(\\\\"Final predictions:\\\\", (final_output \\\\u003e 0.5).astype(int).ravel())\\\\n",
+                       "\\\\n",
+                       "plt.plot(losses)\\\\n",
+                       "plt.xlabel(\\\\"iteration\\\\")\\\\n",
+                       "plt.ylabel(\\\\"binary cross-entropy\\\\")\\\\n",
+                       "plt.title(\\\\"Backpropagation training loss\\\\")\\\\n",
+                       "plt.show()\\\\n"
+                   ],
+        "cell_type":  "code",
+        "execution_count":  null,
+        "metadata":  {
+
+                     }
+    },
+    {
+        "source":  [
+                       "## Reflection and Submission Checklist\\\\n",
+                       "\\\\n",
+                       "- I explained each concept in words before or after the code.\\\\n",
+                       "- I verified important claims numerically or visually.\\\\n",
+                       "- I changed or extended at least one example so the notebook reflects my own work.\\\\n",
+                       "- I ran the notebook from top to bottom without errors.\\\\n",
+                       "- I saved the notebook from Google Colab directly to GitHub, following the course instructions.\\\\n"
+                   ],
+        "cell_type":  "markdown",
+        "metadata":  {
+
+                     }
+    }
+]'''
+
+
+def build_notebook() -> dict:
+    return {
+        "cells": json.loads(CELLS_JSON),
+        "metadata": {
+            "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
+            "language_info": {"name": "python", "pygments_lexer": "ipython3"},
+            "colab": {"name": "MAT422_Section_3_7_Neural_Networks.ipynb"},
+        },
+        "nbformat": 4,
+        "nbformat_minor": 5,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", default="MAT422_Section_3_7_Neural_Networks.ipynb", help="Output notebook path")
+    args = parser.parse_args()
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(build_notebook(), indent=2), encoding="utf-8")
+    print(f"Wrote {output}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,6 @@
 # MAT 422
 
-This repository supports MAT 422 coursework with course materials, homework skills, and project skills:
+This repository supports MAT 422 coursework with three kinds of materials:
 
 - Course topic materials (Supplementary, see Canvas for lecture materials), organized by subject area.
 - Student homework skills in `Skills/Student-Home-Work-Skills-Pack/`, which help students and AI agents create section-specific Jupyter Notebook assignments.
@@ -36,7 +36,15 @@ Current homework skills include:
 - `Skills/Student-Home-Work-Skills-Pack/mat422-section-1-2-linear-algebra`: Linear spaces, orthogonality, Gram-Schmidt process, eigenvalues and eigenvectors.
 - `Skills/Student-Home-Work-Skills-Pack/mat422-section-1-3-qr-least-squares`: QR decomposition, least-squares problems, and linear regression.
 - `Skills/Student-Home-Work-Skills-Pack/mat422-section-1-4-svd-pca`: Singular value decomposition, low-rank matrix approximations, and principal component analysis.
-
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-2-2-probability-random-variables`: Probability axioms, conditional probability, discrete random variables, and continuous random variables.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-2-3-joint-distributions-sampling`: Joint probability distributions, correlation and dependence, and random samples.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-2-4-mle-linear-regression`: Maximum likelihood estimation for random samples and linear regression.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-3-2-limits-derivatives-taylor`: Limits and continuity, derivatives, and Taylor's theorem.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-3-3-optimization-gradient-descent`: Local minimizers, convexity and global minimizers, and gradient descent.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-3-4-logistic-regression`: Logistic regression, sigmoid probabilities, fitting, and decision boundaries.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-3-5-3-6-kmeans-svm`: K-means clustering and support vector machines.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-3-7-neural-networks`: Neural-network formulation, activation functions, cost functions, and backpropagation.
+- `Skills/Student-Home-Work-Skills-Pack/mat422-section-4-1-4-2-graph-modeling`: Graph basics, adjacency representations, graph traversal, and graph modeling.
 Each homework skill folder may include:
 
 - `SKILL.md`: Main instructions for the homework workflow.
