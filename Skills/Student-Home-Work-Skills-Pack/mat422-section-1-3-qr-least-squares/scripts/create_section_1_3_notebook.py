@@ -19,7 +19,7 @@ def code(source: str) -> dict:
 def build_notebook() -> dict:
     cells = [
         md("""
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DynamicLLM/MAT422/blob/main/Skills/mat422-section-1-3-qr-least-squares/assets/MAT422_Section_1_3_QR_Least_Squares_Regression.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DynamicLLM/MAT422/blob/main/Skills/Student-Home-Work-Skills-Pack/mat422-section-1-3-qr-least-squares/assets/MAT422_Section_1_3_QR_Least_Squares_Regression.ipynb)
 
 # MAT 422 - Section 1.3: QR Decomposition, Least Squares, and Linear Regression
 
